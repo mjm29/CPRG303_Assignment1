@@ -1,14 +1,20 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+
+import RestaurantCard from '@/components/RestaurantCard';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <View style={styles.header}>
+
+      </View>
+      <View style={styles.main}>
+        <ScrollView style={styles.carousel} horizontal={true}>
+          <></>
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -27,5 +33,14 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  header: {
+
+  },
+  main: {
+
+  },
+  carousel: {
+
   },
 });
