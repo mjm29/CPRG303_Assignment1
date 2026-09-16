@@ -8,7 +8,7 @@ export interface Card {
 export interface RestaurantCard extends Card {
   type: 'store';
   deliveryTime: string;
-  deliveryFee: string;
+  deliveryFee: number;
   rating: number;
 }
 
