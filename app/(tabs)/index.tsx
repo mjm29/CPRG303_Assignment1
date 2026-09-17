@@ -6,8 +6,9 @@ import Carousel from '@/components/Carousel';
 
 const STORES = [
   { id: 1, name: 'Pizza Hut', imageURL: require('../../assets/images/pizza.jpg'), deliveryFee: 4.99, deliveryTime: '15 min.', rating: 4.1 },
+  { id: 1, name: 'Pizza Hut', imageURL: require('../../assets/images/pizza.jpg'), deliveryFee: 4.99, deliveryTime: '15 min.', rating: 4.1 },
   { id: 2, name: 'KFC', imageURL: require('../../assets/images/chicken.jpg'), promoText: 'Buy 1 Get 1', deliveryFee: 2.99, deliveryTime: '15 min.', rating: 4.4 },
-  { id: 2, name: 'New York Fries', imageURL: require('../../assets/images/Fries.jpg'), promoText: '20% Off', deliveryFee: 3.99, deliveryTime: '10 min.', rating: 4.1 },
+  { id: 3, name: 'New York Fries', imageURL: require('../../assets/images/Fries.jpg'), promoText: '20% Off', deliveryFee: 3.99, deliveryTime: '10 min.', rating: 4.1 },
 ];
 
 export default function TabOneScreen() {
@@ -18,9 +19,11 @@ export default function TabOneScreen() {
           <View style={styles.header}>
 
           </View>
-          <View style={styles.main}>
+          <ScrollView style={styles.main}>
             <Carousel items={STORES} sectionTitle='Stores Near You'/>
-          </View>
+            <Carousel items={STORES} sectionTitle='Popular Stores'/>
+            <Carousel items={STORES} sectionTitle='New Stores'/>
+          </ScrollView>
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -46,7 +49,8 @@ const styles = StyleSheet.create({
 
   },
   main: {
-
+    flex: 1,
+    flexDirection: 'column',
   },
   carousel: {
     gap: 8,
