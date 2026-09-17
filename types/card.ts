@@ -9,7 +9,6 @@ export interface Card {
 
 //for restaurant cards
 export interface StoreCard extends Card {
-  type: 'store';
   deliveryTime: string;
   deliveryFee: number;
   rating: number;
@@ -17,7 +16,6 @@ export interface StoreCard extends Card {
 
 //for individual items on display like grocery items
 export interface ItemCard extends Card {
-  type: 'item';
   price: string;
   unitSize?: string;
 }

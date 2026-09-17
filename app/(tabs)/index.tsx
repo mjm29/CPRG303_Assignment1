@@ -2,11 +2,13 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import RestaurantCard from '@/components/RestaurantCard';
+import Carousel from '@/components/Carousel';
 
 const STORES = [
-  { id: 1, name: 'Pizza Hut', imageURL: require('../../assets/images/pizza.jpg'), type: 'store', deliveryFee: 4.99, deliveryTime: '15 min.', rating: 4.1 },
-  { id: 2, name: 'KFC', imageURL: require('../../assets/images/chicken.jpg'), promoText: 'Buy 1 Get 1', type: 'store', deliveryFee: 2.99, deliveryTime: '15 min.', rating: 4.4 },
-] as const;
+  { id: 1, name: 'Pizza Hut', imageURL: require('../../assets/images/pizza.jpg'), deliveryFee: 4.99, deliveryTime: '15 min.', rating: 4.1 },
+  { id: 2, name: 'KFC', imageURL: require('../../assets/images/chicken.jpg'), promoText: 'Buy 1 Get 1', deliveryFee: 2.99, deliveryTime: '15 min.', rating: 4.4 },
+  { id: 2, name: 'New York Fries', imageURL: require('../../assets/images/Fries.jpg'), promoText: '20% Off', deliveryFee: 3.99, deliveryTime: '10 min.', rating: 4.1 },
+];
 
 export default function TabOneScreen() {
   return (
@@ -17,11 +19,7 @@ export default function TabOneScreen() {
 
           </View>
           <View style={styles.main}>
-            <ScrollView contentContainerStyle={styles.carousel} horizontal={true}>
-              {STORES.map((store) => (
-                <RestaurantCard key={store.id} card={store} />
-              ))}
-            </ScrollView>
+            <Carousel items={STORES} sectionTitle='Stores Near You'/>
           </View>
         </ScrollView>
       </SafeAreaView>
