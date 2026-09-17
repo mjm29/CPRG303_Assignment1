@@ -9,10 +9,18 @@ interface CardUI {
 
 function RestaurantCard ({ card, onPress }: CardUI) {
   return (
-    <Pressable>
-      <Image source={{ uri: card.imageURL}} style={styles.card}/>
+    <Pressable style={styles.container} onPress={onPress}>
+      <Image source={{ uri: card.imageURL}} style={styles.cardImage}/>
+      {card.promoText ? (
+        <View style={styles.promoBadge}>
+          <Text style={styles.promoText}>{card.promoText}</Text>
+        </View>
+      ) : null}
       <View style={styles.details}>
-        <Text>{card.name}</Text>
+        <View>
+          <Text>{card.name}</Text>
+          <FavoriteButton/>
+        </View>
         <Text>${card.deliveryFee}・{card.deliveryTime}</Text>
         <Text>{card.rating} ⭐</Text>
       </View>
@@ -21,12 +29,20 @@ function RestaurantCard ({ card, onPress }: CardUI) {
 }
 
 const styles = StyleSheet.create({
+  container: {
 
-  card: {
+  },
+  cardImage: {
 
   },
   details: {
 
+  },
+  promoBadge: {
+
+  },
+  promoText: {
+    
   },
 
 });
