@@ -1,11 +1,14 @@
+import { ImageSourcePropType } from "react-native";
+
 export interface Card {
+  id: number,
   name: string,
-  imageURL: string;
+  imageURL: ImageSourcePropType;
   promoText?: string;
 }
 
 //for restaurant cards
-export interface RestaurantCard extends Card {
+export interface StoreCard extends Card {
   type: 'store';
   deliveryTime: string;
   deliveryFee: number;
