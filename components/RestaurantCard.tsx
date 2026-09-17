@@ -32,7 +32,7 @@ function RestaurantCard ({ card, onPress }: CardUI) {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
+    width: 200,
     marginBottom: 20,
   },
   imageContainer: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   detailHeader: {
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: 'bold',
     color: '#000000',
     flexDirection: 'row',
     justifyContent: 'space-between',

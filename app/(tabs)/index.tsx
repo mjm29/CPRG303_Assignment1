@@ -5,18 +5,19 @@ import RestaurantCard from '@/components/RestaurantCard';
 
 const STORES = [
   { id: 1, name: 'Pizza Hut', imageURL: require('../../assets/images/pizza.jpg'), type: 'store', deliveryFee: 4.99, deliveryTime: '15 min.', rating: 4.1 },
+  { id: 2, name: 'KFC', imageURL: require('../../assets/images/chicken.jpg'), promoText: 'Buy 1 Get 1', type: 'store', deliveryFee: 2.99, deliveryTime: '15 min.', rating: 4.4 },
 ] as const;
 
 export default function TabOneScreen() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.container}>
           <View style={styles.header}>
 
           </View>
           <View style={styles.main}>
-            <ScrollView style={styles.carousel} horizontal={true}>
+            <ScrollView contentContainerStyle={styles.carousel} horizontal={true}>
               {STORES.map((store) => (
                 <RestaurantCard key={store.id} card={store} />
               ))}
@@ -50,6 +51,6 @@ const styles = StyleSheet.create({
 
   },
   carousel: {
-
+    gap: 8,
   },
 });
