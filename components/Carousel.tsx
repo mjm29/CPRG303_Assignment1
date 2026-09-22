@@ -3,13 +3,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import FavoriteButton from './FavoriteButton';
 import { StoreCard } from '../types/card';
 import { Category } from '../types/category'
+import { Pill } from '../types/pill';
 import RestaurantCard from './RestaurantCard';
 import CategoryIcon from './CategoryIcon';
+import PillButton from './PillButton';
 import { SymbolView } from 'expo-symbols';
 import Colors from '../constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 interface CarouselUI {
-  items: StoreCard[] | Category[];
+  items: StoreCard[] | Category[] | Pill[];
   sectionTitle?: string;
 }
 
@@ -40,7 +42,7 @@ function Carousel ({items, sectionTitle}: CarouselUI) {
         </ScrollView>
       </SafeAreaView>
     );
-  } else {
+  } else if (items[0].type === 'category') {
     items = items as Category[]
     return(
       <SafeAreaView style={categoriesStyles.container}>
@@ -51,6 +53,8 @@ function Carousel ({items, sectionTitle}: CarouselUI) {
         </ScrollView>
       </SafeAreaView>
     );
+  } else {
+
   }
 }
 
