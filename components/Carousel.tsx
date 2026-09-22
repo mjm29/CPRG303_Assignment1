@@ -54,7 +54,16 @@ function Carousel ({items, sectionTitle}: CarouselUI) {
       </SafeAreaView>
     );
   } else {
-
+    items = items as Pill[]
+    return(
+      <SafeAreaView style={styles.pillContainer}>
+        <ScrollView contentContainerStyle={categoriesStyles.carousel} horizontal={true} showsHorizontalScrollIndicator={false}>
+          {items.map((pills) => (
+            <PillButton pill={pills}/>
+          ))}
+        </ScrollView>
+      </SafeAreaView>
+    );
   }
 }
 
@@ -75,11 +84,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  pillContainer: {
+    height: 40,
+    marginHorizontal: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 12,
+  },
 });
 
 const categoriesStyles = StyleSheet.create({
   container: {
-    height: 140,
+    height: 120,
     marginHorizontal: 12,
   },
   carousel: {

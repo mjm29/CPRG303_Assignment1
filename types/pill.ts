@@ -1,6 +1,6 @@
 export interface Pill {
   label: string;
   icon?: string;
-  showOverlayButton?: boolean;
+  showOverlayButton: boolean;
   type: string;
 }
