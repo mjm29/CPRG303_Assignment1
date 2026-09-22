@@ -6,7 +6,7 @@ interface CategoryUI {
   onPress?: () => void;
 }
 
-function CategoryIcon({ category, onPress}: CategoryUI) {
+function CategoryIcon({ category, onPress }: CategoryUI) {
   return(
     <Pressable>
       <View style={styles.container}>

@@ -32,6 +32,8 @@ export default function TabOneScreen() {
           </View>
           <ScrollView style={styles.main}>
             <Carousel items={CATEGORIES} />
+            <Text>Delivery Fees & Service Fees are charged for delivery orders in addition to item prices</Text>
+            <Text style={styles.underlined}>Learn More</Text>
             <Carousel items={STORES} sectionTitle='Stores Near You'/>
             <Carousel items={STORES} sectionTitle='Popular Stores'/>
             <Carousel items={STORES} sectionTitle='New Stores'/>
@@ -52,19 +54,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
   header: {
 
   },
   main: {
     flex: 1,
     flexDirection: 'column',
+    marginHorizontal: 8,
   },
   carousel: {
     gap: 8,
   },
+  underlined: {
+    textDecorationLine: 'underline',
+  }
 });
