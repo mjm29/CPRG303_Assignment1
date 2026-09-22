@@ -1,7 +1,7 @@
 import { ImageSourcePropType } from "react-native";
 
 export interface Card {
-  id: number;
+  id: string;
   name: string;
   imageURL: ImageSourcePropType;
   promoText?: string;

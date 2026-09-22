@@ -48,7 +48,7 @@ function Carousel ({items, sectionTitle}: CarouselUI) {
       <SafeAreaView style={categoriesStyles.container}>
         <ScrollView contentContainerStyle={categoriesStyles.carousel} horizontal={true} showsHorizontalScrollIndicator={false}>
           {items.map((ctgry) => (
-            <CategoryIcon category={ctgry}/>
+            <CategoryIcon key={ctgry.id} category={ctgry}/>
           ))}
         </ScrollView>
       </SafeAreaView>
@@ -59,7 +59,7 @@ function Carousel ({items, sectionTitle}: CarouselUI) {
       <SafeAreaView style={styles.pillContainer}>
         <ScrollView contentContainerStyle={categoriesStyles.carousel} horizontal={true} showsHorizontalScrollIndicator={false}>
           {items.map((pills) => (
-            <PillButton pill={pills}/>
+            <PillButton key={pills.id} pill={pills}/>
           ))}
         </ScrollView>
       </SafeAreaView>

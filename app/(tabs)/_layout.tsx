@@ -21,6 +21,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: '',
+          headerTitle: 'SAIT Polytechnic',
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{
