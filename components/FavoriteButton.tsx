@@ -14,10 +14,10 @@ export default function FavoriteButton() {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'rgba(0,0,0,0.2)',
+    backgroundColor: 'rgba(0,0,0,0.1)',
     borderRadius: 16,
-    width: 32,
-    height: 32,
+    width: 24,
+    height: 24,
     alignItems: 'center',
     justifyContent: 'center'
   }

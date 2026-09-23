@@ -20,7 +20,7 @@ function RestaurantCard ({ card, onPress }: CardUI) {
       </View>
       <View style={styles.details}>
         <View style={styles.detailHeader}>
-          <Text>{card.name}</Text>
+          <Text style={styles.title}>{card.name}</Text>
           <FavoriteButton/>
         </View>
         <Text style={styles.subtext}>${card.deliveryFee}・{card.deliveryTime}</Text>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   imageContainer: {
-    height: 160,
+    height: 140,
     width: '100%',
     borderRadius: 12,
     overflow: 'hidden',
@@ -51,12 +51,13 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   detailHeader: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#000000',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
+  },
+  title: {
+     fontSize: 16,
+    fontWeight: '900',
   },
   promoBadge: {
     position: 'absolute',
