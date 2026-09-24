@@ -42,7 +42,7 @@ function Carousel ({items, sectionTitle}: CarouselUI) {
         </ScrollView>
       </SafeAreaView>
     );
-  } else if (items[0].type === 'category') {
+  } else if (items[0].type === 'category') { //for carousel with categories inside
     items = items as Category[]
     return(
       <SafeAreaView style={categoriesStyles.container}>
@@ -53,7 +53,7 @@ function Carousel ({items, sectionTitle}: CarouselUI) {
         </ScrollView>
       </SafeAreaView>
     );
-  } else {
+  } else { // for carousel with pill components inside
     items = items as Pill[]
     return(
       <SafeAreaView style={styles.pillContainer}>

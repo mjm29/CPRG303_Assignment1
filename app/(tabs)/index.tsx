@@ -6,6 +6,7 @@ import Carousel from '@/components/Carousel';
 import Categories from '@/components/CategoryIcon';
 import { Label } from 'expo-router';
 
+/* Hard coded objects with their properties*/
 const STORES = [
   { id: '1', name: 'Pizza Hut', imageURL: require('../../assets/images/pizza.jpg'),type: 'card', deliveryFee: 4.99, deliveryTime: '15 min.', rating: 4.1 },
   { id: '2', name: 'Burger King', imageURL: require('../../assets/images/burger.jpg'), type: 'card', deliveryFee: 2.99, deliveryTime: '17 min.', rating: 3.8 },
@@ -41,6 +42,7 @@ const HEADER = [
   { id:'4', icon: '🥤', label: 'Convenience', showOverlayButton: false, type: 'pill' }
 ];
 
+/*main screen*/
 export default function TabOneScreen() {
   return (
     <SafeAreaProvider>
@@ -49,6 +51,7 @@ export default function TabOneScreen() {
           <View style={styles.header}>
             <Carousel items={HEADER}/>
           </View>
+          {/*main vertically scrollable part*/}
           <ScrollView style={styles.main} showsVerticalScrollIndicator={false}>
             <Carousel items={CATEGORIES} />
             <Carousel items={PILLS}/>

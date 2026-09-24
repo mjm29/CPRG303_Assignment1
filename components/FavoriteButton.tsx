@@ -7,6 +7,7 @@ export default function FavoriteButton() {
 
   return (  
     <Pressable style={styles.button} onPress={() => setFavorited(!favorited)} hitSlop={10}>
+      {/*default state is no fill, if pressed change state to render red heart*/}
       <Text>{favorited ? '❤️' : '🤍'}</Text>
     </Pressable>
   );
